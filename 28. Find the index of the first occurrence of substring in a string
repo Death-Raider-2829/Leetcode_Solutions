@@ -1,0 +1,8 @@
+//This one was fairly easy one line code...just had to use indexOf function of strings in java and the rest was done...as of how it was done. The indexOf 
+//function finds the first iteration of the said substring and prints it...It does not care about spaces in between.
+
+class Solution {
+    public int strStr(String haystack, String needle) {
+        return haystack.indexOf(needle);
+    }
+}

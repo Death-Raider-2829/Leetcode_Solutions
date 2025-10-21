@@ -1,0 +1,14 @@
+//Leaned about trim in this problem. Used it to find the last space between two strings and subtract that from the total length of the string.
+
+class Solution {
+    public int lengthOfLastWord(String s) {
+        String new_s=s.trim();
+        int g=new_s.lastIndexOf(' ');
+        int x=new_s.length();
+        if(g==-1){
+            return x;
+        }
+
+        return x-g-1;
+    }
+}

@@ -1,0 +1,26 @@
+//While not the most optimised of solutions, but practiced the builtin funtions cementing how to use them. Next target would be to implement these builtin funtions directly in the program i.e. writing 
+//their code directly in program and understanding their funtionality.
+
+
+class Solution {
+    public String reverseWords(String s) {
+        String[] arr=s.split(" ");
+        int i=arr.length;
+        StringBuilder sb=new StringBuilder();
+        for(String chara:arr){
+            char word[]=chara.toCharArray();
+            int j=word.length-1;
+            while(j>=0){
+                sb.append(word[j]);
+                j--;
+            }
+            if(i>1){
+                sb.append(" ");
+            }
+            i--;
+        }
+
+        s=sb.toString();
+        return s;
+    }
+}

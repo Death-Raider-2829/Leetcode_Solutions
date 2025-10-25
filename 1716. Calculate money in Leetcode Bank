@@ -1,0 +1,21 @@
+//Did daily problem on leetcode for recurring addition with changing starting number after every 7 additions
+
+
+class Solution {
+    public int totalMoney(int n) {
+        int money_on_monday=1,total=0,money_everyday=1;
+    
+        for(int i=1;i<=n;i++){
+            if(i%7==0){
+                total=total+money_everyday;
+                money_on_monday+=1;
+                money_everyday=money_on_monday;
+            }
+            else{
+                total=total+money_everyday;
+                money_everyday++;
+            }   
+        }
+        return total;
+    }
+}

@@ -21,3 +21,28 @@ class Solution {
 }
 
 ** This is not the final Code that I will publish here...there is a more optimised version that I will publish soon.
+
+**UPDATE:- Just did the problem in a more optimised way... used a simpler n(n+1)/2 formula method.
+
+class Solution {
+    public int totalMoney(int n) {
+        int minus=0,weeks=n/7,surplus=n%7,total=0,max=7;
+
+        for(int i=0;i<weeks;i++){
+            total=total+(max*(max+1))/2 - (i*(i+1))/2;
+            max++;
+            minus++;
+        }
+
+        if(weeks==0){
+            total=total+(surplus*(surplus+1))/2;
+        }
+
+         else if(weeks!=0){
+            total=total+((surplus+minus)*(surplus+minus+1))/2 - (minus*(minus+1))/2;
+        }
+
+        return total;
+        
+    }
+}

@@ -1,0 +1,42 @@
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public int getDecimalValue(ListNode head) {
+        if(head==null){
+            return -1;
+        }
+        if(head.val==0 && head.next==null){
+            return 0;
+        }
+        int c=len(head);
+        ListNode n1=new ListNode(head.val);
+        int sum=0;
+        ListNode current=head;
+        while(current!=null){
+            c--;
+            if(current.val==1){
+            sum=sum+(int)Math.pow(2,c);
+            }
+            current=current.next;
+        }
+       
+        return sum;
+    }
+    public int len(ListNode head){
+        int i=0;
+        ListNode current=head;
+        while(current!=null){
+            current=current.next;
+            i++;
+        }
+        return i;
+    }
+}
